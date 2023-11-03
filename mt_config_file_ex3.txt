@@ -1,0 +1,81 @@
+#exemplu cuvant acceptat: cbabbc#cbab
+#exemple cuvinte respinse: bca#ca	abc#abc		aab#aabca	bab##ba		#ba	stringul vid
+#tape-ul este infinit doar in partea dreapta
+
+
+States:
+    q0
+    q1
+    q_accept
+    q_reject
+End
+
+Input alphabet:
+    a
+    b
+    c
+    #
+End
+
+Tape alphabet:
+    a
+    b
+    c
+    #
+    
+End
+
+Transitions:
+    q0,q0,a,a,a,a,N,R
+    q0,q0,b,b,b,b,N,R
+    q0,q0,c,c,c,c,N,R
+    q0,q0,a,b,a,b,N,R
+    q0,q0,a,c,a,c,N,R
+    q0,q0,c,b,c,b,N,R
+    q0,q0,c,a,c,a,N,R
+    q0,q0,b,c,b,c,N,R
+    q0,q0,b,a,b,a,N,R
+    q0,q1,a,#,a,#,N,R
+    q0,q1,b,#,b,#,N,R
+    q0,q1,c,#,c,#,N,R
+    q1,q1,a,a,a,a,R,R
+    q1,q1,b,b,b,b,R,R
+    q1,q1,c,c,c,c,R,R
+    q1,q_accept,a, ,a, ,N,N
+    q1,q_accept,b, ,b, ,N,N
+    q1,q_accept,c, ,c, ,N,N
+    q1,q_reject,a,b,a,b,N,N
+    q1,q_reject,b,a,b,a,N,N
+    q1,q_reject,a,c,a,c,N,N
+    q1,q_reject,c,a,c,a,N,N
+    q1,q_reject,c,b,c,b,N,N
+    q1,q_reject,b,c,b,c,N,N
+    q1,q_reject,#,b,#,b,N,N
+    q1,q_reject,#,c,#,c,N,N
+    q1,q_reject,#,a,#,a,N,N
+    q1,q_reject,a,#,a,#,N,N
+    q1,q_reject,b,#,b,#,N,N
+    q1,q_reject,c,#,c,#,N,N
+    q1,q_reject,#, ,#, ,N,N
+    q0,q_reject,#,b,#,b,N,N
+    q0,q_reject,#,c,#,c,N,N
+    q0,q_reject,#,a,#,a,N,N
+    q0,q_reject,#,#,#,#,N,N
+    q0,q_reject, , , , ,N,N
+End
+
+Start state:
+   q0
+End
+
+Accept state:
+   q_accept
+End
+
+Reject state:
+   q_reject
+End
+
+
+
+

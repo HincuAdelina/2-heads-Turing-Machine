@@ -1,0 +1,50 @@
+# adunam numere naturale nenule
+
+States:
+	q0
+	q1
+	q2
+	q_accept
+	q_reject
+End
+
+
+Input alphabet:
+	1
+End
+
+
+Tape alphabet:
+	1
+	#	
+	 
+End
+
+
+Transitions:
+	q0,q0,1,1,1,1,R,R
+	q0,q1,#,#,#,#,N,R
+	q1,q1,#,1,#,1,N,R
+	q1,q2,#, ,#, ,N,L
+	q2,q_accept,#,1,1,#,N,N
+	q2,q_accept,#, ,#, ,N,N
+	q0,q_reject,#,#,#,#,N,N
+	q1,q_reject,#,#,#,#,N,N
+	q0,q_reject, , , , ,N,N
+End
+
+Start state:
+	q0
+End
+
+Accept state:
+	q_accept
+End
+
+Reject state:
+	q_reject
+End
+
+
+
+	

@@ -1,0 +1,66 @@
+#L = {a^nb^ka^nb^k | n si k numere naturale nenule}
+
+States:
+	q0
+	q1
+	q2
+	q3
+	q_accept
+	q_reject
+End
+
+
+Input alphabet:
+	a
+	b
+End
+
+
+Tape alphabet:
+	a
+	b
+	x
+	y
+	
+End
+
+
+Transitions:
+	q0,q0,a,a,a,a,N,R
+	q0,q1,a,b,a,b,N,R
+	q1,q1,a,b,a,b,N,R
+	q1,q2,a,a,x,x,R,R
+	q2,q2,a,a,x,x,R,R
+	q2,q3,b,b,y,y,R,R
+	q3,q3,b,b,y,y,R,R
+	q3,q_accept,x, ,x, ,N,N
+	q0,q_reject,a, ,a, ,N,N
+	q0,q_reject,b,b,b,b,N,N
+	q0,q_reject,b, ,b, ,N,N
+	q0,q_reject,b,a,b,a,N,N
+	q0,q_reject, , , , ,N,N
+	q1,q_reject,a, ,a, ,N,N
+	q2,q_reject,a, ,a, ,N,N
+	q2,q_reject,a,b,a,b,N,N
+	q2,q_reject,b, ,b, ,N,N
+	q2,q_reject,b,a,b,a,N,N
+	q3,q_reject,b, ,b, ,N,N
+	q3,q_reject,b,a,b,a,N,N
+	q3,q_reject,x,b,x,b,N,N
+End
+
+Start state:
+	q0
+End
+
+Accept state:
+	q_accept
+End
+
+Reject state:
+	q_reject
+End
+
+
+
+	
